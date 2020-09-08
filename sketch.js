@@ -4,10 +4,5 @@ function setup() {
 }
 
 function draw() {
-  line(10,10,100 100)
-}
-
-function draw() {
-line(10,10,200,200);
->>>>>>> f30c4005c392c3de1db8624435f9babecd1d3069
+  line(10,10,100 100);
 }
