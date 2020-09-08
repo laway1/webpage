@@ -4,5 +4,9 @@ function setup() {
 }
 
 function draw() {
-  line(10,10,100,100);
+  fill(0,200,20);
+  rect(20,20,100,100);
+  fill(200,0,0);
+  circle(250,250,300);
+  rect(300,300,100);
 }
