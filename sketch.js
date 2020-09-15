@@ -1,22 +1,37 @@
-let xpos = 0;
-let ypos = 0;
-let xpos2 = 100;
-let ypos2 = 50;
+let xpos= 50;
+let ypos= 0;
+let xballspeed= 10;
+let yballspeed= 10;
 
 function setup() {
-createCanvas(500,500);
-background(200,0,200);
-angleMode(DEGREES);
+createCanvas(windowWidth,windowHeight);
+
+
 }
 
 function draw() {
-  background(100,0,200);
-  rect(xpos,ypos,50);
+background(xpos,ypos,200);
+fill(xpos,ypos,200);
+ellipse (xpos,ypos,100,80);
+xpos = xpos + xballspeed;
+ypos = ypos + yballspeed;
 
-  xpos = xpos +1;
-  ypos = ypos +5;
+// if check both x and y seperately
 
-  circle(xpos2,ypos2,50);
-  xpos2 = xpos2 +3;
-  ypos2 = ypos2 +1;
+// for x position
+//left side
+if (xpos > windowWidth){
+  xballspeed = -xballspeed;
+}
+//right side
+if (xpos <0){
+  xballspeed = -xballspeed;
+}
+//for y position
+if (ypos > windowHeight){
+  yballspeed = -yballspeed;
+}
+if (ypos <0){
+  yballspeed = -yballspeed;
+}
 }
