@@ -2,17 +2,18 @@ let xpos= 50;
 let ypos= 0;
 let xballspeed= 10;
 let yballspeed= 10;
-
+//let x = random(windowWidth);
+//let y = random(windowHeight);
 function setup() {
 createCanvas(windowWidth,windowHeight);
-
 
 }
 
 function draw() {
-background(xpos,ypos,200);
-fill(xpos,ypos,200);
-ellipse (xpos,ypos,100,80);
+background(0,0,200);
+noStroke();
+fill(200,200,200);
+circle (xpos,ypos,100);
 xpos = xpos + xballspeed;
 ypos = ypos + yballspeed;
 
@@ -34,4 +35,9 @@ if (ypos > windowHeight){
 if (ypos <0){
   yballspeed = -yballspeed;
 }
+// clicked on the circle and appear at random location
+if(mouseIsPressed & dist(mouseX,mouseY,xpos,ypos) <50){
+  circle = random(xpos,ypos);
+}
+
 }
