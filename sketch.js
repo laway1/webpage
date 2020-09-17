@@ -37,7 +37,8 @@ if (ypos <0){
 }
 // clicked on the circle and appear at random location
 if(mouseIsPressed & dist(mouseX,mouseY,xpos,ypos) <50){
-  circle = random(xpos,ypos);
+  xpos = random(0,1000);
+  ypos = random(0,1000);
 }
 
 }
