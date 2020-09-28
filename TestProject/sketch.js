@@ -9,8 +9,6 @@ frameRate(30);
 function draw() {
 
 noStroke();
-let color = random(0,255);
-
 
 for( let i = 0; i < width; i = i + 300){
   for( let j = 0; j < height; j = j + 300){
