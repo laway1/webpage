@@ -1,5 +1,3 @@
-
-
 function setup() {
 createCanvas(windowWidth,windowHeight);
 background(255);
@@ -9,6 +7,8 @@ frameRate(30);
 function draw() {
 
 noStroke();
+let color = random(0,255);
+
 
 for( let i = 0; i < width; i = i + 300){
   for( let j = 0; j < height; j = j + 300){
@@ -23,16 +23,14 @@ for( let i = 0; i < width; i = i + 300){
     else{
       fill(color);
     }
-    // Left arrow key function for moveing the cricles to the left by 10 units.
-    if(keyIsPressed & keyCode === LEFT_ARROW){
-      i = i+10;
-      j= j+10;
+    // Left arrow key function for moveing the cricles to the left by x units.
+    if(keyIsPressed & keyCode === UP_ARROW){
+      j = j+ 50;
     }
-    // Right arrow key function for moveing the cricles to the right by 10 units.
+    // Right arrow key function for moveing the cricles to the right by x units.
 
     if(keyIsPressed & keyCode === RIGHT_ARROW){
-      i = i-10;
-      j= j-10;
+      i = i- 50;
     }
 circle(i,j,z);
 }
