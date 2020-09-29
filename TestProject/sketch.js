@@ -4,16 +4,19 @@ function setup() {
 createCanvas(windowWidth,windowHeight);
 background(255);
 frameRate(30);
+
 }
 
 function draw() {
 
 noStroke();
-let color = random(0,255);
+ellipseMode(CENTER);
+rectMode(CENTER);
 
-
-for( let i = 0; i < width; i = i + 300){
-  for( let j = 0; j < height; j = j + 300){
+// Creating random size circles between (0-100) on a Grayscale, if mouseIsPressed create color circles bettwen (0-100)
+for( let i = 150; i < width; i = i + width/6){
+  for( let j = 100; j < height; j = j + height/6){
+    let color = random(0,255);
     let rcolor = random(0,255);
     let gcolor = random(0,255);
     let bcolor = random(0,255);
@@ -25,23 +28,58 @@ for( let i = 0; i < width; i = i + 300){
     else{
       fill(color);
     }
-    // Left arrow key function for moveing the cricles to the left by x units.
-  if(keyIsPressed & keyCode === UP_ARROW){
-     j = j + 50;
+    ellipse(i,j, z, z);
+}
+}
+// Press UP_Arrow for create new circles in between.
+for( let i = 315; i < width; i = i + width/3){
+  for ( let j = 180; j < height; j = j + height/3){
+    let rcolor = random(0,255);
+    let gcolor = random(0,255);
+    let bcolor = random(0,255);
+    let z = random(0,50);
+
+    if(keyIsPressed & keyCode == UP_ARROW){
+      ellipse(i,j,z,z);
+    }
   }
-
-    if(keyIsPressed & keyCode === DOWN_ARROW){
-      j = j - 50;
-    }
-    // Right arrow key function for moveing the cricles to the right by x units.
-
-    if(keyIsPressed & keyCode === RIGHT_ARROW){
-      i = i + 50;
-    }
-    if(keyIsPressed & keyCode === LEFT_ARROW){
-      i = i - 50;
-    }
-      circle(i,j,z);
 }
+for( let i = 630; i < width; i = i + width/3){
+  for ( let j = 335; j < height; j = j + height/3){
+    let rcolor = random(0,255);
+    let gcolor = random(0,255);
+    let bcolor = random(0,255);
+    let z = random(0,50);
+
+    if(keyIsPressed & keyCode == DOWN_ARROW){
+      ellipse(i,j,z,z);
+    }
+  }
 }
+for( let i = 630; i < width; i = i + width/3){
+  for ( let j = 180; j < height; j = j + height/3){
+    let rcolor = random(0,255);
+    let gcolor = random(0,255);
+    let bcolor = random(0,255);
+    let z = random(0,50);
+
+    if(keyIsPressed & keyCode == RIGHT_ARROW){
+      rect(i,j,z,z);
+    }
+  }
+}
+for( let i = 315; i < width; i = i + width/3){
+  for ( let j = 335; j < height; j = j + height/3){
+    let rcolor = random(0,255);
+    let gcolor = random(0,255);
+    let bcolor = random(0,255);
+    let z = random(0,50);
+
+    if(keyIsPressed & keyCode == LEFT_ARROW){
+      rect(i,j,z,z);
+    }
+  }
+}
+
+
 }
