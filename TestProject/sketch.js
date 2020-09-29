@@ -1,3 +1,5 @@
+
+
 function setup() {
 createCanvas(windowWidth,windowHeight);
 background(255);
@@ -15,7 +17,7 @@ for( let i = 0; i < width; i = i + 300){
     let rcolor = random(0,255);
     let gcolor = random(0,255);
     let bcolor = random(0,255);
-    let z = random(0,215);
+    let z = random(0,100);
     // Left click funtion for changing colors.
     if(mouseIsPressed & mouseButton === LEFT){
       fill(rcolor,gcolor,bcolor);
@@ -24,15 +26,22 @@ for( let i = 0; i < width; i = i + 300){
       fill(color);
     }
     // Left arrow key function for moveing the cricles to the left by x units.
-    if(keyIsPressed & keyCode === UP_ARROW){
-      j = j+ 50;
+  if(keyIsPressed & keyCode === UP_ARROW){
+     j = j + 50;
+  }
+
+    if(keyIsPressed & keyCode === DOWN_ARROW){
+      j = j - 50;
     }
     // Right arrow key function for moveing the cricles to the right by x units.
 
     if(keyIsPressed & keyCode === RIGHT_ARROW){
-      i = i- 50;
+      i = i + 50;
     }
-circle(i,j,z);
+    if(keyIsPressed & keyCode === LEFT_ARROW){
+      i = i - 50;
+    }
+      circle(i,j,z);
 }
 }
 }
