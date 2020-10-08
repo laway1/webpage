@@ -1,53 +1,42 @@
-
-
+let xposlist = [700,800,250,300,1000];
+let yposlist = [400,900,300,100,200];
+let yspeedlist = [15,10,30,20,45];
+let xspeedlist = [15,10,30,20,45];
 function setup() {
 createCanvas(windowWidth,windowHeight);
-background(255);
-
-
-let a = random(100,windowWidth);
-let b = random(100,windowHeight);
-let c = random(0,10);
-let d = random(0,3);
-stroke(0);
-strokeWeight(20);
-//Bottom Right
-fill(0);
-rect(0,b+(height-b)/2,a,(height-b)/2);
-
-//Top left rect
-fill(250,0,0);
-rect(0,0,a,b);
-
-//Top Right
-fill(0,0,250);
-rect(a+(windowWidth-a)/2,0,(windowWidth-a)/2,b);
-
-//Bottom left
-fill(250,250,0);
-
-if(a > 500){
-  rect(0,b,a/c,height);
-}
-else{
-  rect(0,b,a*c,height);
-}
-
-//Bottom Middle
-fill(0,250,0);
-
-if(b > 500){
-rect(a,b,(windowWidth-a)/2,height);
-}
-else{
-rect(a,b,(windowWidth-a)/2,height);
-}
-
-
 
 
 }
+
 function draw() {
+
+  background(0,0,255);
+
+for( let i= 0; i < xposlist.length; i= i+1){
+
+  circle(xposlist[i],yposlist[i],100);
+
+  yposlist[i] = yposlist[i] + yspeedlist[i];
+  xposlist[i] = xposlist[i] + xspeedlist[i];
+
+  if(yposlist[i] > height){
+    yspeedlist[i] = -yspeedlist[i];
+  }
+
+  if(yposlist[i] < 0){
+    yspeedlist[i] = -yspeedlist[i];
+  }
+
+  if(xposlist[i] > width){
+    xspeedlist[i] = -xspeedlist[i];
+  }
+
+  if(xposlist[i] < 0){
+    xspeedlist[i] = -xspeedlist[i];
+  }
+
+}
+
 
 
 }
