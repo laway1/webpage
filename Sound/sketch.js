@@ -1,13 +1,12 @@
-let synth;
+let guitar;
 
 function preload(){
-  synth = loadSound('https://laway1.github.io/webpage/Sound/synth.wav');
-
+  guitar = loadSound ('https://laway1.github.io/webpage/Sound/guitar.wav');
 }
 
 function setup(){
 
-createCanvas(windowWidth,windowHeight);
+createCanvas(1000,1000);
 background(0);
 
 }
