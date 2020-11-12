@@ -15,16 +15,18 @@ frameRate(30);
 }
 
 function draw(){
+// random shades of red color.
   let r = random(0,255);
-
-  //xpos = random (0,width);
-//  ypos = random (0, height);
- ypos =noise(yoffset)* height;
+// x & y location of the offest multiply by the width and height
+ ypos =noise(yoffset) * height;
  xpos= noise(xoffset) * width;
- strokeWeight(3);
+ // no fill rectangulars with stroke weight 3.
+strokeWeight(3);
 stroke(r,0,0);
 noFill();
+// drawing retangulars at xpos & ypos
 rect(xpos,ypos,100);
+// increments of the offset values
 xoffset = xoffset + 0.01;
 yoffset = yoffset + 0.02;
 }
