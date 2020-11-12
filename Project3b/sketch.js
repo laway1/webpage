@@ -1,32 +1,26 @@
-let xpos;
-let ypos;
-let xoffset = 1.0;
-let yoffset  = 0.0;
-let r ;
-
-
+let start = 0.0;
+let xoffset ;
 
 function setup(){
 
   createCanvas(windowWidth,windowHeight);
-background(255);
-frameRate(30);
 
 }
 
 function draw(){
-// random shades of red color.
-  let r = random(0,255);
-// x & y location of the offest multiply by the width and height
- ypos =noise(yoffset) * height;
- xpos= noise(xoffset) * width;
- // no fill rectangulars with stroke weight 3.
-strokeWeight(3);
-stroke(r,0,0);
-noFill();
-// drawing retangulars at xpos & ypos
-rect(xpos,ypos,100);
-// increments of the offset values
-xoffset = xoffset + 0.01;
-yoffset = yoffset + 0.02;
+
+background(180);
+// setting xoffset = start so it doesnt always start at 1.
+xoffset=start;
+for( let i= 0; i<width; i=i+10){
+
+  let j = noise(xoffset) *height;
+  noFill();
+  //drawing circles at i and j offset posistion
+  circle(i,j,200);
+//increment of xoffset by 0.003
+  xoffset = xoffset +0.003;
+}
+//increment of start by 0.003
+start = start+0.003;
 }
