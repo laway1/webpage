@@ -18,8 +18,8 @@ background(180);
     for( let y =0; y< height; y=y+50){
 //
       col1 = noise(xoffset,yoffset) * 255;
-      col2 = noise(xoffset,yoffset) * 255;
-      col3 = noise(xoffset,yoffset) * 255;
+      col2 = noise(xoffset+10,yoffset+30) * 255;
+      col3 = noise(xoffset+20,yoffset+40) * 255;
       noStroke();
       fill(col1,col2,col3);
       rect(x,y,40);
