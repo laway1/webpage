@@ -23,9 +23,9 @@ background(180);
       noStroke();
       fill(col1,col2,col3);
       rect(x,y,40);
-        xoffset =xoffset +0.03;
+        xoffset =xoffset +0.00003;
     }
-  yoffset =yoffset +0.02;
+  yoffset =yoffset +0.00002;
   }
 
 }
