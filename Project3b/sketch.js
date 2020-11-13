@@ -16,7 +16,7 @@ background(180);
 
   for( let x=0; x< width; x=x+50){
     for( let y =0; y< height; y=y+50){
-//
+//smooth color chaning to the cloest shade of colors
       col1 = noise(xoffset,yoffset) * 255;
       col2 = noise(xoffset+10,yoffset+30) * 255;
       col3 = noise(xoffset+20,yoffset+40) * 255;
