@@ -1,31 +1,30 @@
-let yoffset =0.0;
-let xoffset =0.0;
-let col1;
-let col2;
-let col3;
+let x1;
+let x2;
+let x3;
 
+let y1;
+let y2;
+let y3;
+
+let offset;
 function setup(){
 
   createCanvas(windowWidth,windowHeight);
-//noLoop();
+background(255);
+stroke(0,50);
+offset = 0.0;
+noFill();
 }
 
 function draw(){
+  x1 = noise(offset)*width;
+  x2 = noise(offset+20)*width;
+  x3 = noise(offset+30)*width;
 
-background(180);
+  y1 = noise(offset+40)*height;
+  y2 = noise(offset+50)*height;
+  y3 = noise(offset+80)*height;
 
-  for( let x=0; x< width; x=x+50){
-    for( let y =0; y< height; y=y+50){
-//smooth color chaning to the cloest shade of colors
-      col1 = noise(xoffset,yoffset) * 255;
-      col2 = noise(xoffset+10,yoffset+30) * 255;
-      col3 = noise(xoffset+20,yoffset+40) * 255;
-      noStroke();
-      fill(col1,col2,col3);
-      rect(x,y,40);
-        xoffset =xoffset +0.00003;
-    }
-  yoffset =yoffset +0.00002;
-  }
-
+  triangle(x1, y1, x2, y2, x3, y3)
+  offset=offset+0.01;
 }
