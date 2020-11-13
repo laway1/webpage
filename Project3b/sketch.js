@@ -1,26 +1,31 @@
-let start = 0.0;
-let xoffset ;
+let yoffset =0.0;
+let xoffset =0.0;
+let col1;
+let col2;
+let col3;
 
 function setup(){
 
   createCanvas(windowWidth,windowHeight);
-
+//noLoop();
 }
 
 function draw(){
 
 background(180);
-// setting xoffset = start so it doesnt always start at 1.
-xoffset=start;
-for( let i= 0; i<width; i=i+10){
 
-  let j = noise(xoffset) *height;
-  noFill();
-  //drawing circles at i and j offset posistion
-  circle(i,j,200);
-//increment of xoffset by 0.003
-  xoffset = xoffset +0.003;
-}
-//increment of start by 0.003
-start = start+0.003;
+  for( let x=0; x< width; x=x+50){
+    for( let y =0; y< height; y=y+50){
+//
+      col1 = noise(xoffset,yoffset) * 255;
+      col2 = noise(xoffset,yoffset) * 255;
+      col3 = noise(xoffset,yoffset) * 255;
+      noStroke();
+      fill(col1,col2,col3);
+      rect(x,y,40);
+        xoffset =xoffset +0.03;
+    }
+  yoffset =yoffset +0.02;
+  }
+
 }
