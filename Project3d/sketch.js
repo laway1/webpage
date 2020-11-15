@@ -1,32 +1,30 @@
-let xpos;
-let ypos;
-let xoffset = 1.0;
-let yoffset  = 0.0;
-let r ;
+let sizeoffset =0.0;
+let coloroffset = 0.0;
+let xoffset =1.0;
+let yoffset=1.0;
 
+let r;
+let g;
+let b;
 
-
-function setup(){
-
+function setup() {
   createCanvas(windowWidth,windowHeight);
-background(255);
-frameRate(30);
-
+  background(32);
 }
 
 function draw(){
-// random shades of red color.
-  let r = random(0,255);
-// x & y location of the offest multiply by the width and height
- ypos =noise(yoffset) * height;
- xpos= noise(xoffset) * width;
- // no fill rectangulars with stroke weight 3.
-strokeWeight(3);
-stroke(r,0,0);
-noFill();
-// drawing retangulars at xpos & ypos
-rect(xpos,ypos,100);
-// increments of the offset values
-xoffset = xoffset + 0.01;
-yoffset = yoffset + 0.02;
+  noStroke();
+  let circleX = noise(xoffset)*width;
+  let circleY = noise(yoffset)*height;
+  let circleSize = noise(sizeoffset)*200;;
+  let r = noise(coloroffset)*255;
+  let g = noise(coloroffset +10)*255;
+  let b = noise(coloroffset +20)*255;
+  fill(r, g, b);
+
+  ellipse(circleX, circleY, circleSize)
+  sizeoffset = sizeoffset + 0.2;
+  coloroffset =coloroffset +0.1;
+  xoffset = xoffset+0.01;
+  yoffset =yoffset+0.02;
 }
