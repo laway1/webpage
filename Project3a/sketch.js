@@ -14,8 +14,8 @@ function setup() {
 
 function draw(){
   noStroke();
-  let circleX = noise(xoffset)*width;
-  let circleY = noise(yoffset)*height;
+  let rectX = noise(xoffset)*width;
+  let rectY = noise(yoffset)*height;
 //  let circleSize = noise(sizeoffset)*200;;
   let r = noise(coloroffset)*255;
   let g = noise(coloroffset +10)*255;
@@ -23,7 +23,7 @@ function draw(){
   noFill();
   strokeWeight(1);
   stroke(r,g,b);
-  rect(circleX, circleY, 100)
+  rect(rectX, rectY, 100)
   sizeoffset = sizeoffset + 0.2;
   coloroffset =coloroffset +0.1;
   xoffset = xoffset+0.01;
