@@ -15,6 +15,7 @@ function setup() {
 
 function draw(){
   noStroke();
+  // x, y and z offsets by the widht and height
   let lineX1 = noise(xoffset)*width;
   let lineY1 = noise(yoffset+10)*height;
   let lineX2 = noise(xoffset+20)*width;
@@ -22,7 +23,7 @@ function draw(){
   let lineZ1 = noise(zoffset+40)*width;
   let lineZ2 = noise(zoffset+60)*height;
 
-
+// color offsets to each pixels
   let r = noise(coloroffset)*255;
   let g = noise(coloroffset +10)*255;
   let b = noise(coloroffset +20)*255;
@@ -30,7 +31,10 @@ function draw(){
  noFill();
  strokeWeight(1);
  stroke(r,g,b);
+ // draw a line at each x,y and z offset cooridinates
   line (lineX1,lineY1,lineZ1,lineX2,lineY2,lineZ2);
+  //incerments for xoffset, yoffset, zoffset and color offset values
+
   sizeoffset = sizeoffset + 0.5;
   coloroffset =coloroffset +0.1;
   xoffset = xoffset+0.01;

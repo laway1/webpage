@@ -1,7 +1,7 @@
 let sizeoffset =0.0;
 let coloroffset = 0.0;
 let xoffset =1.0;
-let yoffset=1.0;
+let yoffset=0.0;
 
 let r;
 let g;
@@ -21,9 +21,11 @@ function draw(){
   let g = noise(coloroffset +10)*255;
   let b = noise(coloroffset +20)*255;
   fill(r, g, b);
-
+// ellispe drawn at x & y offset locations and the size that was closest to the previous
   ellipse(circleX, circleY, circleSize)
-  sizeoffset = sizeoffset + 0.2;
+
+  // offset increments for next loop
+  sizeoffset = sizeoffset + 0.1;
   coloroffset =coloroffset +0.1;
   xoffset = xoffset+0.01;
   yoffset =yoffset+0.02;

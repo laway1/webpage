@@ -17,6 +17,7 @@ noFill();
 }
 
 function draw(){
+  // x and y positions offsets by the widths and heights
   x1 = noise(offset)*width;
   x2 = noise(offset+20)*width;
   x3 = noise(offset+30)*width;
@@ -24,7 +25,8 @@ function draw(){
   y1 = noise(offset+40)*height;
   y2 = noise(offset+50)*height;
   y3 = noise(offset+80)*height;
-
+// triangles drawn at the closest cooridinates to the pervious
   triangle(x1, y1, x2, y2, x3, y3)
+// offest increments
   offset=offset+0.01;
 }
