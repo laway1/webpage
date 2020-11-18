@@ -25,7 +25,7 @@ function draw(){
   ellipse(circleX, circleY, circleSize)
 
   // offset increments for next loop
-  sizeoffset = sizeoffset + 0.1;
+  sizeoffset = sizeoffset + 0.05;
   coloroffset =coloroffset +0.1;
   xoffset = xoffset+0.01;
   yoffset =yoffset+0.02;
