@@ -35,7 +35,7 @@ function draw(){
   line (lineX1,lineY1,lineZ1,lineX2,lineY2,lineZ2);
   //incerments for xoffset, yoffset, zoffset and color offset values
 
-  sizeoffset = sizeoffset + 0.5;
+  sizeoffset = sizeoffset + 0.9;
   coloroffset =coloroffset +0.1;
   xoffset = xoffset+0.01;
   yoffset =yoffset+0.02;
