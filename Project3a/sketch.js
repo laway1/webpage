@@ -27,9 +27,9 @@ function draw(){
 // 100 size rectangular drawn closest location of percious x and y offset locations
   rect(rectX, rectY, 100)
 
-// increments of all the offset values.  
+// increments of all the offset values.
   sizeoffset = sizeoffset + 0.2;
   coloroffset =coloroffset +0.1;
-  xoffset = xoffset+0.01;
-  yoffset =yoffset+0.02;
+  xoffset = xoffset+0.04;
+  yoffset =yoffset+0.05;
 }

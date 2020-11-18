@@ -37,7 +37,7 @@ function draw(){
 
   sizeoffset = sizeoffset + 0.9;
   coloroffset =coloroffset +0.1;
-  xoffset = xoffset+0.01;
-  yoffset =yoffset+0.02;
+  xoffset = xoffset+0.03;
+  yoffset =yoffset+0.04;
   zoffset=zoffset+0.03;
 }
