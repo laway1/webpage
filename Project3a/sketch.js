@@ -1,7 +1,7 @@
 let sizeoffset =0.0;
 let coloroffset = 0.0;
-let xoffset =1.0;
-let yoffset=1.0;
+let xoffset =0.0;
+let yoffset=0.0;
 
 let r;
 let g;

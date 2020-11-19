@@ -1,6 +1,6 @@
 let sizeoffset =0.0;
 let coloroffset = 0.0;
-let xoffset =1.0;
+let xoffset =0.0;
 let yoffset=0.0;
 
 let r;
@@ -27,6 +27,6 @@ function draw(){
   // offset increments for next loop
   sizeoffset = sizeoffset + 0.05;
   coloroffset =coloroffset +0.1;
-  xoffset = xoffset+0.01;
-  yoffset =yoffset+0.02;
+  xoffset = xoffset+0.03;
+  yoffset =yoffset+0.04;
 }
