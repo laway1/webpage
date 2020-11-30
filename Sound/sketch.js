@@ -58,7 +58,14 @@ function draw() {
 
   }
 
-if(mouseIsPressed){
-  always.play();
 }
+
+function mousePressed(){
+
+  if(always.isPlaying()){
+    always.pause();
+  }
+  else{
+    always.play();
+  }
 }
