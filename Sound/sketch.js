@@ -58,7 +58,7 @@ function draw() {
 
   }
 
-}
 if(mouseIsPressed){
   always.play();
+}
 }
