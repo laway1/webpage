@@ -62,10 +62,10 @@ function draw() {
 
 function mousePressed(){
 
-  if(always.isPlaying()){
-    always.pause();
+  if(piano.isPlaying()){
+    piano.pause();
   }
   else{
-    always.play();
+    piano.play();
   }
 }
