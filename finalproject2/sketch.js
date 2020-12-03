@@ -20,11 +20,12 @@ function setup() {
     y[i] = height/2;
     //random angles
     angle[i] = random(360);
-    // random distance between 1 - 3
+    // random speed between 1 - 5
     vel[i] = random(1,5);
     if (random(100) < 50) {
       vel[i] = vel[i] * -1;
     }
+    // random size of the ellipse
     w[i] = random(20, 40);
   }
 }
@@ -45,10 +46,10 @@ function move() {
     x[i] = x[i] + sx;
     y[i] = y[i] + sy;
 
-    //noise for direction of the ellipse
+    //noise for changing the direction of each ellipse in natural movement
     let n = noise(x[i]/100, y[i]/300);
 
-    //changing the angle of the direaction
+    //new array of angles
     angle[i] += map(n, 0, 1, -15, 15);
 
     if (x[i] < 0){
