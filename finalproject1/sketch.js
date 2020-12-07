@@ -31,18 +31,18 @@ blendMode(ADD);
 
 for (let i = 0; i < maxring; i = i + 100) {
 
-// starting Angle value of Sin(i) and changing each frame by dviding by 10
+// starting Angle value of Sin(i) and changing each sktech it drawn and dviding by 10
   angleA = sin(i + frameCount/10);
   // remapping sin parameter value between -1,1 to  0 - 360 range
   angleA = map(angleA, -1, 1, 0, 360);
-  // stopping Angle value of Cos(i), changing each frame by dividing by 20
+  // stopping Angle value of Cos(i), changing each skecth is drawn and dividing by 20
   angleB = cos(i+ frameCount/20);
   // remapping cos parameter value between -1,1 to  0 - 360 range
   angleB = map(angleB, -1,1, 360, 0);
 
-  //determine the size of the arc by muliplying angleA & angleB
+  //determine the size of the arc by multiplying angleA & angleB
   arclength = sin(i+ frameCount/2) * cos(i+ frameCount/7);
-//remapping the values betwen -1,1 to 50,1000 range
+//remapping the values of arclenght betwen -1,1 to i/4,i  that increment each time sketch is drawn
   arclength = map(arclength, -1, 1,i/4,i);
 
   let b = noise(coloroffset)*255;
