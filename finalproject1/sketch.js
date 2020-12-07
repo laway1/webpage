@@ -1,71 +1,68 @@
 
-let x;
-let y;
 let angleA;
 let angleB;
-let d;
+let arclength;
 let coloroffset =0.0;
 let r;
 let g;
 let b;
-let a =10;
+let alpha;
 let piano;
-let ringnumb = 300;
-let maxring = 2000;
+let maxring = 1000;
 
 function preload(){
-  piano = loadSound('https://laway1.github.io/webpage/Sound/always.mp3');
+piano = loadSound('https://laway1.github.io/webpage/Sound/always.mp3');
+piano.play();
+
 }
 
 function setup() {
-  createCanvas(windowWidth, windowHeight);
-  background(100, 100, 0);
-  angleMode(DEGREES);
+createCanvas(windowWidth, windowHeight);
+
+angleMode(DEGREES);
+alpha= 5;
 }
 
 function draw() {
-
-  background(0, 0, 0);
-  blendMode(ADD);
-
-
-  for (let r = 0; r < ringnumb; r = r + 100) {
-    angleA = sin(r + frameCount);
-    angleA = map(angleA, -1, 1, 0, 360);
-    angleB = cos(r + frameCount/2);
-    angleB = map(angleB, -1, 1, 360, 0);
+background(0,0,0);
+// create the translucent effect with the moving arcs
+blendMode(ADD);
 
 
-    d = sin(r + frameCount / 2) * cos(frameCount / 7 + r);
-    d = map(d, -1, 1, r/4, r);
+for (let i = 0; i < maxring; i = i + 100) {
 
-    let b = noise(coloroffset)*255;
-    let g = noise(coloroffset + 10)*200;
-    stroke(0, g, b,a);
-    strokeWeight(d/20);
-    noFill();
-    arc(width / 2, height / 2, d, d, angleA, angleB);
-    if( ringnumb > maxring){
-      ringnumb--;
-    }
-    else{
-      ringnumb++;
+// starting Angle value of Sin(i) and changing each frame by dviding by 10
+  angleA = sin(i + frameCount/10);
+  // remapping sin parameter value between -1,1 to  0 - 360 range
+  angleA = map(angleA, -1, 1, 0, 360);
+  // stopping Angle value of Cos(i), changing each frame by dividing by 20
+  angleB = cos(i+ frameCount/20);
+  // remapping cos parameter value between -1,1 to  0 - 360 range
+  angleB = map(angleB, -1,1, 360, 0);
 
-    }
-    if( ringnumb == maxring){
+  //determine the size of the arc by muliplying angleA & angleB
+  arclength = sin(i+ frameCount/2) * cos(i+ frameCount/7);
+//remapping the values betwen -1,1 to 50,1000 range
+  arclength = map(arclength, -1, 1,i/4,i);
 
-    }
-
-  }
+  let b = noise(coloroffset)*255;
+  let g = noise(coloroffset + 10)*180;
+  stroke(0, g, b,alpha);
+  strokeWeight(2);
+  noFill();
+  // draw arc from center of the canvas, start at angleA and stopping at angleB
+  arc(width / 2, height / 2, arclength, arclength, angleA, angleB);
 
 }
+coloroffset = coloroffset+0.02;
 
+}
+//play the paino bgm, when mouse it clicked
 function mousePressed(){
-
-  if(piano.isPlaying()){
-    piano.pause();
-  }
-  else{
-    piano.play();
-  }
+if(piano.isPlaying()){
+  piano.pause();
+}
+else{
+  piano.play();
+}
 }
